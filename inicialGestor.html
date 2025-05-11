@@ -3,27 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="logoPeq.png">
     <title>Tela Inicial - Gestor</title>
-    <link rel="stylesheet" href="igcss.css">
+    <link rel="stylesheet" href="inicialGestor.css">
+    <!--Link para os icones do google-->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 </head>
 <body>
-    <div class="navbar">
+    <header class="navbar">
         <div class="logo">
             <img src="logoGraQ.png" alt="Logo" style="height: 35px;">
         </div>
         <div class="links">
             <a href="#home">Início</a>
-            <a href="#vaga">Criar Vaga</a>
+            <a href="#vaga">Solicitar Vaga</a>
             <a href="#perfil">Circulo</a>
         </div>
-    </div>
+    </header>
+
     <div class="sfundo">
-        <!-- Devemos arrumar o tamanho desta barra de perquisa -->
         <div class="search"> 
             <input type="text" placeholder="Pesquisar vaga">
-            <button type="submit">Pesquisar</button>
+            <button type="submit">
+                <span class="material-symbols-outlined">search</span>
+            </button>
         </div>
     </div>
+    
      <!-- Devemos discutir o tamanho dos botoes de acessar a vaga-->
     <div class="content">
         <h1>Vagas criadas por você</h1>
