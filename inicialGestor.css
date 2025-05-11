@@ -14,6 +14,7 @@ body {
     color: white;
     text-decoration: none;
     margin: 0 1rem;
+    cursor: pointer; /* Muda o cursor para uma mãozinha ao passar o mouse */
 }
 .navbar a:hover {
     text-decoration: underline;
@@ -23,24 +24,60 @@ body {
     padding: 2rem;
     text-align: center;
 }
-.search {
-    align-items: center;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-}
-.sfundo{
+.sfundo {
     background-color: #FCFB30;
-    height: 60px;
-}
-h1 {
+    height: 70px;
+    display: flex; /* Adicionado para centralizar a barra dentro do sfundo */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+  }
+  
+  .search {
+    display: flex;
+    width: 400px;
+    border-radius: 300px; /* Arredonda as bordas da barra */
+    border: 1px solid #d0d0d094; /* Adiciona uma borda à barra */
+    overflow: hidden; /* Garante que o arredondamento funcione */
+    align-items: center; /* Alinha verticalmente os itens dentro da barra */
+  }
+  
+  .search input[type="text"] {
+    flex: 1; /* Faz o input ocupar todo o espaço disponível */
+    border: none; /* Remove a borda padrão do input */
+    outline: none; /* Remove o contorno padrão do input */
+    padding: 10px;
+    font-size: 16px;
+    border-top-right-radius: 0; /* Remove o arredondamento direito */
+    border-bottom-right-radius: 0; /* Remove o arredondamento direito */
+  }
+  
+  .search button[type="submit"] {
+    border: none; /* Remove a borda padrão do botão */
+    background-color: #e8e8e8; /* Cor de fundo do botão */
+    color: #494949; /* Cor do ícone */
+    padding: 10px 15px;
+    cursor: pointer;
+    display: flex; /* Centraliza o ícone */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    border-left: none; /* Remove a borda esquerda do botão */
+    border-top-left-radius: 0; /* Remove o arredondamento esquerdo */
+    border-bottom-left-radius: 0; /* Remove o arredondamento esquerdo */
+  }
+  
+  .search button[type="submit"] .material-symbols-outlined {
+    font-size: 20px; /* Ajusta o tamanho do ícone */
+  }
+  
+  h1 {
     text-align: left;
     color: white;
-    margin-bottom: 30px;
-}
-.vaga{
+  }
+  
+  .vaga {
     background-color: white;
     padding: 1px;
     margin: 20px;
     border-radius: 30px;
-}
+    cursor: pointer; /* Muda o cursor para uma mãozinha ao passar o mouse */
+  }
