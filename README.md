@@ -1,2 +1,2 @@
 # Residencia BBTS
- Residencia Tecnologica do Porto digital, em parceiria com a BBTS.
+ Residência Tecnológica do Porto digital, em parceria com a BBTS.
