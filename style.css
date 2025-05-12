@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    font-family: sans-serif;
+    font-family: Arial, sans-serif; /* Especificando a fonte padrão para não dar erro */
     height: 100vh;
 }
 .login {
@@ -129,24 +129,30 @@ align-items: center;
 .search {
 display: flex;
 width: 400px;
-border-radius: 300px; 
+border-radius: 30px;
 border: 1px solid #d0d0d094; 
 align-items: center; 
+overflow: hidden;
 }
-.search input {
+.search input[type="text"]{
 flex: 1; 
 border: none; 
 outline: none;
 padding: 10px;
+height: 18.4px; /* Esclarecendo a altura do input */
+width: 194.4px; /* Esclarecendo a largura do input */
 font-size: 16px;
 border-top-right-radius: 0; 
 border-bottom-right-radius: 0; 
 }
-.search button {
+.search button[type="submit"]{
 border: none;
 background-color: #e8e8e8; 
-color: #494949; 
+color: #494949;
+margin-top: 0px;
 padding: 10px 15px;
+height: 40px; /* Esclarecendo a altura do botão */
+width: 50px;  /* Esclarecendo a largura do botão */
 cursor: pointer;
 display: flex; 
 justify-content: center;
