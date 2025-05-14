@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BBTS</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <div id="login" class="login">
@@ -39,24 +40,30 @@
         <button id="botao-entrar">Entrar</button>
     </div>
 
+   <!--INTERFACE DO USUARIO-->
 
     <div id="usuario" class="usuario" style="display: none;">
+          <!--TELA INICIAL GESTOR-->
         <div class="tela-usuario">
             <header class="navbar">
                 <div class="logo">
                     <img src="img/logoGraQ.png" alt="Logo" style="height: 35px;">
                 </div>
-                <div class="links">
-                    <a href="#home">Início</a>
-                    <a href="#vaga">Solicitar Vaga</a>
-                    <a href="#perfil">Circulo</a>
-                </div>
+                <div class="nav-right">
+                    <div class="links">
+                        <a href="#home">Início</a>
+                        <a href="#vaga">Solicitar Vaga</a>  
+                    </div>
+                    <div class="user-icon">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                </div>  
             </header>
         
             <div class="sfundo">
                 <div class="search"> 
-                    <input type="text" placeholder="Pesquisar vaga">
-                    <button type="submit">
+                    <input type="text" id="searchInput" placeholder="Pesquisar vaga">
+                    <button id="searchBtn" type="submit">
                         <span class="material-symbols-outlined">search</span>
                     </button>
                 </div>
@@ -80,6 +87,304 @@
                 </div>
             </div>
         </div>
+   <!--DESCRIÇÃO DA VAGA-->
+
+        <div class="descricao">
+             <header class="navbar">
+                <div class="logo">
+                    <img src="img/logoGraQ.png" alt="Logo" style="height: 35px;">
+                </div>
+                <div class="nav-right">
+                    <div class="links">
+                        <a href="#home">Início</a>
+                        <a href="#vaga">Solicitar Vaga</a>  
+                    </div>
+                    <div class="user-icon">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                </div>  
+            </header>
+        <div class="box-descricao">
+            <div class="cabecalho">
+                <span class="data">Publicado en 21 de Abril de 2025</span>
+                <span class="codigo">Código:485734905</span>
+                <span class="status" id="statusVaga">Pendente</span>
+                <span>Nome do cargo:</span>
+                <h2 class="titulo">Engenheiro de Software</h2>
+            </div>
+      
+            <p><strong>Número de vagas:</strong><span>1</span></p>
+            <p><strong>Palavras Chave:</strong></p>
+            <p class="palavras">
+                Python, Java, Linux, NoSQL, Selenium, Criatividade, Anaítico, Comunicação, Engenharia de Software.
+            </p>
+            <div class="detalhes">
+                <div>
+                    <p><strong>Localização:</strong><br>Brasilia, DF</p>
+                    <p><strong>Modalidade de trabalho:</strong><br>Híbrido</p>
+                    <p><strong>Observações</strong><br>-----</p>
+                </div>
+                <div class="direita">
+                    <p><strong>Prioridade:</strong><br>Alta</p>
+                    <p><strong>Nivel de experiência:</strong><br>Senior</p>
+                </div>
+            </div>
+        </div>
+        <div class="resultado">
+            <button id="resultados">Resultados</button>
+        </div>
     </div>
+    </div>
+
+    <div class="resultadogs">
+        <header class="navbar">
+            <div class="logo">
+                <img src="img/logoGraQ.png" alt="Logo" style="height: 35px;">
+            </div>
+            <div class="nav-right">
+                <div class="links">
+                    <a href="#home">Início</a>
+                    <a href="#vaga">Solicitar Vaga</a>  
+                </div>
+                <div class="user-icon">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+            </div>  
+        </header>
+        <section class="toolbar">
+            <button>📁 Arquivo</button>
+            <button>📤 Exportar</button>
+            <button>💾 Salvar</button>
+            <button>✏ Editar Visualização</button>
+          </section>
+        
+          <main class="dashboard">
+            <section class="card">
+              <h3>Tecnologias sugeridas para qualificação</h3>
+              <canvas id="chart1"></canvas>
+            </section>
+            <section class="card">
+              <h3>Tecnologias - Frequência nos Perfis</h3>
+              <canvas id="chart2"></canvas>
+            </section>
+            <section class="card">
+              <h3>Soft Skills - Frequência nos Perfis</h3>
+              <canvas id="chart3"></canvas>
+            </section>
+            <section class="card">
+              <h3>Relação de Experiência e Compatibilidade</h3>
+              <canvas id="chart4"></canvas>
+            </section>
+          </main>
+    </div>
+
+
+    <div class="svagaGestor" style="display: none;">
+        <header class="navbar">
+            <div class="logo">
+                <img src="img/logoGraQ.png" alt="Logo" style="height: 35px;">
+            </div>
+            <div class="nav-right">
+                <div class="links">
+                    <a href="#home">Início</a>
+                    <a href="#vaga">Solicitar Vaga</a>  
+                </div>
+                <div class="user-icon">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+            </div>  
+        </header>
+        <main>
+            <form action="/submit-vaga" method="post">
+                
+                <!-- Informações da Vaga -->
+                <fieldset>
+                    <legend>Informações da Vaga</legend>
+    
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label for="nome-cargo">Nome do Cargo:</label>
+                            <input type="text" id="nome-cargo" name="nome-cargo" placeholder="Ex: Scrum Master" required>
+                        </div>
+    
+                        <div class="form-group">
+                            <label for="num-vagas">Número de vagas:</label>
+                            <input type="number" id="num-vagas" name="num-vagas" min="1" required>
+                        </div>
+    
+                        <div class="form-group">
+                            <label for="modalidade-trabalho">Modalidade de Trabalho:</label>
+                            <select id="modalidade-trabalho" name="modalidade-trabalho" required>
+                                <option value="">Selecione</option>
+                                    <optgroup label="Presencial">
+                                        <option value="integral-presencial">Integral</option>
+                                        <option value="meio-periodo-presencial">Meio Período</option>
+                                        <option value="contrato-temporario-presencial">Contrato Temporário</option>
+                                        <option value="estagio-presencial">Estágio</option>
+                                    </optgroup>
+                                    <optgroup label="À Distância">
+                                        <option value="integral-distancia">Integral</option>
+                                        <option value="meio-periodo-distancia">Meio Período</option>
+                                        <option value="contrato-temporario-distancia">Contrato Temporário</option>
+                                        <option value="estagio-distancia">Estágio</option>
+                                    </optgroup>
+                            </select>
+                    </div>
+                </div>
+    
+                
+                    <div class="form-group">
+                        <label>Habilidades Técnicas:</label><br>
+                        <div id="container-habilidades-tecnicas" class="form-horizontal"></div>
+                        <span class="material-symbols-outlined" id="add-habilidade-tecnica">add</span>
+                    </div>
+            
+    
+                    <div class="form-group">
+                        <label>Habilidades Interpessoais:</label><br>
+                        <div id="container-habilidades-inter" class="form-horizontal"></div>
+                        <span class="material-symbols-outlined" id="add-habilidade-inter">add</span>
+                    </div>
+                </fieldset>
+    
+                <!-- Formação Acadêmica -->
+                <fieldset>
+                    <legend>Formação Acadêmica</legend>
+    
+                    <div class="form-horizontal"> 
+                        <div class="form-group">
+                            <label for="instituicao">Instituição:</label>
+                            <input type="text" id="instituicao" name="instituicao" placeholder="Ex: Universidade Católica">
+                        </div>
+    
+                        <div class="form-group">
+                            <label for="curso">Curso:</label>
+                            <input type="text" id="curso" name="curso" placeholder="Ex: Ciência da Computação">
+                        </div>
+                    </div>
+    
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label for="ano-conclusao">Ano de Conclusão:</label>
+                            <input type="date" id="ano-conclusao" name="ano-conclusao">
+                        </div>
+    
+                        <div class="form-group">
+                            <label for="nivel-educacional">Nível Educacional:</label>
+                            <select id="nivel-educacional" name="nivel-educacional">
+                                <option value="">Selecione</option>
+                                <option value="ensino-medio">Ensino Médio</option>
+                                <option value="tecnico">Técnico</option>
+                                <option value="superior">Superior</option>
+                                <option value="pos-graduacao">Pós-Graduação</option>
+                                <option value="mestrado">Mestrado</option>
+                                <option value="doutorado">Doutorado</option>
+                            </select>
+                        </div>
+                    </div>  
+                    <!-- Adicionar interatividade para criar mais um campo Formação ao clicar no icone "mais" -->
+                    <span class="material-symbols-outlined">add</span>
+                </fieldset>
+                <!-- Idiomas -->
+                <fieldset>
+                    <legend>Idiomas</legend>
+    
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label for="idiomas">Idioma:</label>
+                            <input type="text" id="idiomas" name="idiomas" placeholder="Ex: Inglês">
+                        </div>
+    
+                        <div class="form-group">
+                            <label for="nivel-idioma">Nível:</label>
+                            <select id="nivel-idioma" name="nivel-idioma">
+                                <option value="">Selecione</option>
+                                <option value="basico">Básico</option>
+                                <option value="intermediario">Intermediário</option>
+                                <option value="avancado">Avançado</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <!-- Adicionar interatividade para criar mais um campo Idioma ao clicar no icone "mais" -->
+                    <span class="material-symbols-outlined">add</span>
+                </fieldset>
+    
+                <!-- Experiência Profissional -->
+                <fieldset>
+                    <legend>Experiência Profissional</legend>
+    
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label for="empresas">Empresa (atual ou anterior): </label>
+                            <input type="text" id="empresas" name="empresas" placeholder="Ex: XYZ">
+                        </div>
+    
+                        <div class="form-group">
+                            <label for="nivel-experiencia">Nível de Experiência:</label>
+                            <select id="nivel-experiencia" name="nivel-experiencia">
+                                <option value="">Selecione</option>
+                                <option value="junior">Júnior</option>
+                                <option value="pleno">Pleno</option>
+                                <option value="senior">Sênior</option>
+                            </select>
+                        </div>
+                    </div>
+    
+                    <!-- Adicionar interatividade para criar mais um campo Empresa ao clicar no icone "mais" -->
+                    <span class="material-symbols-outlined">add</span>
+                </fieldset>
+    
+                <!-- Localização -->
+                <fieldset>
+                    <legend>Localização</legend>
+    
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label for="pais">País:</label>
+                            <input type="text" id="pais" name="pais" placeholder="Ex: Brasil">
+                        </div>
+    
+                        <div class="form-group">
+                            <label for="estado">Estado:</label>
+                            <input type="text" id="estado" name="estado" placeholder="Ex: Ceará">
+                        </div>
+    
+                        <div class="form-group">
+                            <label for="cidade">Cidade:</label>
+                            <input type="text" id="cidade" name="cidade" placeholder="Ex: Fortaleza">
+                        </div>
+                    </div>
+    
+                </fieldset>
+    
+                <!-- Detalhes da Solicitação -->
+                <fieldset>
+                    <legend>Detalhes da Solicitação</legend>
+    
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label for="prioridade-vaga">Prioridade da Vaga:</label>
+                            <select id="prioridade-vaga" name="prioridade-vaga" required>
+                                <option value="">Selecione</option>
+                                <option value="baixa">Baixa</option>
+                                <option value="media">Média</option>
+                                <option value="alta">Alta</option>
+                            </select>
+                        </div>
+    
+                        <div class="form-group">
+                            <label for="observacao">Observação:</label>
+                            <input type="text" id="observacao" name="observacao"></input>
+                        </div>
+                    </div>
+    
+                </fieldset>
+    
+                <button type="submit">Criar vaga</button>
+            </form>
+        </main>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>

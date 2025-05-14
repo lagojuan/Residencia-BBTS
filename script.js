@@ -1,5 +1,5 @@
+//Direcionamento das interfaces
 document.addEventListener('DOMContentLoaded', function(){
-
     const tipoUsuarioSelect = document.getElementById('tipo-usuario');
     const botaoEntrar = document.getElementById('botao-entrar');
     const telaLogin = document.getElementById('login');
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function(){
         console.error('Elementos HTML com IDs "tipo-usuario" ou "botao-entrar" não encontrados.');
     }
 });
- 
+ // Visibilidade da senha 
   const passwordInput = document.getElementById('password-input');
   const togglePassword = document.querySelector('.toggle-password');
 
@@ -38,5 +38,266 @@ document.addEventListener('DOMContentLoaded', function(){
 
     this.classList.toggle('visible'); 
   });
+//Pesquisa Tela Inicial Gestor 
+  document.addEventListener('DOMContentLoaded', function() {
+    const searchBtn = document.getElementById('searchBtn');
+    const searchInput = document.getElementById('searchInput');
+    const vagas = document.querySelectorAll('.vaga');
 
-  
+    function realizarBusca() {
+        const termo = searchInput.value.toLowerCase();
+
+        vagas.forEach(card => {
+            const titulo = card.querySelector('h2').textContent.toLowerCase();
+            if (titulo.includes(termo)) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+    searchBtn.addEventListener('click', function () {
+        realizarBusca();
+    });
+    // Pressionar Enter
+    searchInput.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+            event.preventDefault(); 
+            realizarBusca();
+        }
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    const telaUsuario = document.querySelector('.tela-usuario');
+    const telaDescricao = document.querySelector('.descricao');
+    const telaResultado = document.querySelector('.resultadogs');
+    const vagas = document.querySelectorAll('.vaga');
+
+    // Mostrar tela inicial
+    telaUsuario.style.display = 'block';
+    telaDescricao.style.display = 'none';
+    telaResultado.style.display = 'none';
+
+    // Clique em uma vaga → vai para descrição
+    vagas.forEach(vaga => {
+        vaga.addEventListener('click', () => {
+            telaUsuario.style.display = 'none';
+            telaDescricao.style.display = 'block';
+            telaResultado.style.display = 'none';
+        });
+    });
+
+    const botaoResultados = document.getElementById('resultados');
+    botaoResultados.addEventListener('click', () => {
+        telaDescricao.style.display = 'none';
+        telaResultado.style.display = 'block';
+    });
+});
+
+//GRAFICOS 
+ // Gráfico 1
+ new Chart(document.getElementById('chart1'), {
+    type: 'bar',
+    data: {
+      labels: ['BERT', 'AWS', 'Scrapy'],
+      datasets: [{
+        label: 'Sugestões',
+        data: [20, 60, 30],
+        backgroundColor: ['#007bff', '#00c0ef', '#36a2eb']
+      }]
+    },
+    options: {
+      responsive: true,
+      scales: { y: { beginAtZero: true } }
+    }
+  });
+
+  // Gráfico 2
+  new Chart(document.getElementById('chart2'), {
+    type: 'bar',
+    data: {
+      labels: ['Python', 'Selenium', 'Java', 'SQL', 'NoSQL', 'Linux'],
+      datasets: [{
+        label: 'Frequência',
+        data: [100, 90, 85, 80, 75, 70],
+        backgroundColor: ['#fce303', '#f7c106', '#f9a825', '#ff9800', '#ff5722', '#ff7043']
+      }]
+    },
+    options: {
+      responsive: true,
+      scales: { y: { beginAtZero: true } }
+    }
+  });
+
+  // Gráfico 3
+  new Chart(document.getElementById('chart3'), {
+    type: 'bar',
+    data: {
+      labels: ['Criatividade', 'Analítico', 'Comunicação'],
+      datasets: [{
+          label: 'Frequência',
+        data: [40, 80, 60],
+        backgroundColor: ['#66bb6a', '#43a047', '#a5d6a7']
+      }]
+    },
+    options: {
+      responsive: true,
+      scales: { y: { beginAtZero: true } }
+    }
+  });
+
+  // Gráfico 4
+  new Chart(document.getElementById('chart4'), {
+    type: 'bar',
+    data: {
+      labels: ['Júnior', 'Pleno', 'Sênior'],
+      datasets: [{
+        label: '% Compatibilidade',
+        data: [30, 70, 90],
+        backgroundColor: ['#ba68c8', '#7e57c2', '#5e35b1']
+      }]
+    },
+    options: {
+      responsive: true,
+      scales: { y: { beginAtZero: true } }
+    }
+  });
+  document.addEventListener('DOMContentLoaded', function () {
+    const botaoResultados = document.getElementById('resultados');
+    const telaDescricao = document.querySelector('.descricao');
+    const telaResultado = document.querySelector('.resultadogs');
+
+    if (botaoResultados) {
+        botaoResultados.addEventListener('click', function () {
+            telaDescricao.style.display = 'none';
+            telaResultado.style.display = 'block';
+        });
+    }
+});
+document.addEventListener('DOMContentLoaded', () => {
+    const container = document.getElementById('container-habilidades-tecnicas');
+    const addBtn = document.getElementById('add-habilidade-tecnica');
+
+    function criarCampoHabilidade() {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'input-wrapper';
+
+        const input = document.createElement('input');
+        input.type = 'text';
+        input.name = 'habilidades-tecnicas[]';
+        input.required = true;
+
+        const removeBtn = document.createElement('button');
+        removeBtn.type = 'button';
+        removeBtn.className = 'remove-btn';
+        removeBtn.title = 'Remover';
+
+        const closeIcon = document.createElement('span');
+        closeIcon.className = 'material-symbols-outlined';
+        closeIcon.innerText = 'close';
+
+        removeBtn.appendChild(closeIcon);
+
+        removeBtn.addEventListener('click', () => {
+            wrapper.remove();
+        });
+
+        wrapper.appendChild(input);
+        wrapper.appendChild(removeBtn);
+        return wrapper;
+    }
+
+    // Adicionar novo campo
+    addBtn.addEventListener('click', () => {
+        const novoCampo = criarCampoHabilidade();
+        container.appendChild(novoCampo);
+    });
+});
+
+//Adiciona campo de habilidade interpessoal ao clicar no botão de "mais"
+document.addEventListener('DOMContentLoaded', () => {
+    const container = document.getElementById('container-habilidades-inter');
+    const addBtn = document.getElementById('add-habilidade-inter');
+
+    function criarCampoHabilidade() {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'input-wrapper';
+
+        const input = document.createElement('input');
+        input.type = 'text';
+        input.name = 'habilidades-inter[]';
+        input.required = true;
+
+        const removeBtn = document.createElement('button');
+        removeBtn.type = 'button';
+        removeBtn.className = 'remove-btn';
+        removeBtn.title = 'Remover';
+
+        const closeIcon = document.createElement('span');
+        closeIcon.className = 'material-symbols-outlined';
+        closeIcon.innerText = 'close';
+
+        removeBtn.appendChild(closeIcon);
+
+        removeBtn.addEventListener('click', () => {
+            wrapper.remove();
+        });
+
+        wrapper.appendChild(input);
+        wrapper.appendChild(removeBtn);
+        return wrapper;
+    }
+
+    // Adicionar novo campo
+    addBtn.addEventListener('click', () => {
+        const novoCampo = criarCampoHabilidade();
+        container.appendChild(novoCampo);
+    });
+});
+document.addEventListener('DOMContentLoaded', function () {
+    const telaUsuario = document.querySelector('.tela-usuario');
+    const telaDescricao = document.querySelector('.descricao');
+    const telaResultados = document.querySelector('.resultadogs');
+    const telaSolicitarVaga = document.querySelector('.svagaGestor');
+
+    const vagas = document.querySelectorAll('.vaga');
+    const btnResultados = document.getElementById('resultados');
+    const linkSolicitarVaga = document.querySelectorAll('a[href="#vaga"]');
+
+    // Função para esconder todas as telas
+    function esconderTelas() {
+        telaUsuario.style.display = 'none';
+        telaDescricao.style.display = 'none';
+        telaResultados.style.display = 'none';
+        telaSolicitarVaga.style.display = 'none';
+    }
+
+    // Mostrar tela de vagas no início
+    telaUsuario.style.display = 'block';
+
+    // Ao clicar em uma vaga
+    vagas.forEach(vaga => {
+        vaga.addEventListener('click', () => {
+            esconderTelas();
+            telaDescricao.style.display = 'block';
+        });
+    });
+
+    // Ao clicar em "Resultados"
+    if (btnResultados) {
+        btnResultados.addEventListener('click', () => {
+            esconderTelas();
+            telaResultados.style.display = 'block';
+        });
+    }
+
+    // Ao clicar em "Solicitar Vaga"
+    linkSolicitarVaga.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault(); // Impede o comportamento padrão do link
+            esconderTelas();
+            telaSolicitarVaga.style.display = 'block';
+        });
+    });
+});

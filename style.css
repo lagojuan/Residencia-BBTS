@@ -97,13 +97,26 @@ transition: background-color 0.3s ease;
 button:hover{
 background-color: #FCFB30;
 }
+.tela-usuario{
+    background-color: #465EFF;
+    min-height: 1000vh;
+}
 .navbar {
 background-color: #465EFF;
-padding: 1rem;
+padding: 1rem 2rem;
 color: white;
 display: flex;
 justify-content: space-between;
 align-items: center;
+}
+.nav-right{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.links {
+    display: flex;
+    gap: 16px;
 }
 .navbar a {
 color: white;
@@ -113,6 +126,15 @@ cursor: pointer;
 }
 .navbar a:hover {
 text-decoration: underline;
+}
+.user-icon {
+    flex: 1;
+    display: flex;
+    font-size: 24px;
+    cursor: pointer;
+}
+.user-icon:hover {
+    opacity: 0.8;
 }
 .content {
 background-color: #465EFF;
@@ -175,4 +197,237 @@ margin: 20px;
 border-radius: 30px;
 cursor: pointer; 
 }
+.vaga:hover{
+    transform: scale(1.02);
+}
+.descricao {
+    background-color: #465EFF;
+    min-height: 100vh;
+    padding: 6rem 2rem 2rem 2rem;
+}
+.box-descricao {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 1.5rem 2rem;
+    border-radius: 10px;
+    margin: 2rem auto;
+    width: 95%;
+    max-width: 1000px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+.status {
+    color: red;
+    font-weight: bold;
+}
+.cabecalho span:last-child{
+    display: block;
+    margin-right: 0;
+    margin-bottom: 5px;
+}
+.titulo {
+    order: 1;
+    margin-top: 0.5rem;
+    font-size: 1.3rem;
+}
+.detalhes {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+.detalhes .esquerda, .detalhes .direita {
+    width: 48%;
+}
+.resultado {
+    margin-top: 2rem;
+    text-align: right;
+}
+.resultado button {
+    background-color: #ccc;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.resultado button:hover {
+    background-color: #FCFB30;
+}
+/*PAGINA DOS RESULTADOS*/
+.resultadogs {
+    background-color: #f5f5f5;
+    color: #333;
+}
+.menu .btn {
+    background: transparent;
+    border: none;
+    color: white;
+    font-weight: 500;
+    padding: 8px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .menu .btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  .menu .btn.blue {
+    background-color: #7da6ff;
+    color: white;
+  }
+  .toolbar {
+    background-color: #efefef;
+    padding: 12px 24px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  .toolbar button {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 6px 14px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  .toolbar button:hover {
+    background-color: #f0f0f0;
+  } 
+  .dashboard {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas fixas */
+    gap: 20px;
+    padding: 24px;
+  }
+  @media (max-width: 768px) {
+    .dashboard {
+      grid-template-columns: 1fr; /* Em telas menores, só uma coluna */
+    }
+  }
+  .card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: transform 0.2s;
+  } 
+  .card:hover {
+    transform: translateY(-2px);
+  }
+  .card h3 {
+    font-size: 16px;
+    margin: 0 0 12px 0;
+    color: #3f51b5;
+  }
+.svagaGestor h1{
+    text-align: left;
+    color: rgb(0, 0, 0);
+}
+.svagaGestor button {
+    float: right;
+    background-color: #465EFF;
+    color: white;
+    border: none;
+    margin: 1rem; 
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.svagaGestor button:hover {
+    background-color: #17a01b;
+    transition: background-color 0.3s; /* Adiciona uma transição suave para a mudança de cor */
+}
+.form-group{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+fieldset {
+    margin: 1rem; /* Adiciona margem ao redor de cada fieldset */
+    padding: 1rem; /* Adiciona preenchimento interno ao fieldset */
+    border: 1px solid #cdcdcd; /* Adiciona uma borda para delimitar o grupo */
+    background-color: #ededed; /* Adiciona um fundo sutil para destacar o grupo */
+    border-radius: 5px;
+}
 
+legend {
+    padding: 0 0.5rem; /* Adiciona um pequeno preenchimento ao redor da legenda */
+    font-weight: bold; /* Deixa a legenda em negrito */
+    color: #333; /* Define a cor da legenda */
+}
+
+.form-horizontal {
+    display:flex;
+    justify-content:left;
+    align-items: center;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.material-symbols-outlined{
+    cursor: pointer; /* Muda o cursor para uma mãozinha ao passar o mouse */
+    font-size: 20px; /* Ajusta o tamanho do ícone */
+    margin-right: 4px; /* Adiciona uma margem direita para espaçamento */
+    vertical-align: middle; /* Alinha o ícone verticalmente com o texto */
+    color: #000000; /* Define a cor do ícone */
+}
+
+.material-symbols-outlined:hover{
+    color: #006CD0; /* Muda a cor do ícone ao passar o mouse */
+    transition: color 0.3s; /* Adiciona uma transição suave para a mudança de cor */
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.input-wrapper input {
+    padding: 4px;
+    width: 110px;
+    background-color: #B9E0FF;
+    border: 1px solid #006CD0;
+    border-radius: 30px 0 0 30px;
+    margin-right: 0;
+}
+
+.input-wrapper button {
+    background-color: #B9E0FF;
+    border: 1px solid #006CD0;
+    padding: 0px;
+    border-radius: 0 30px 30px 0;
+    cursor: pointer;
+    display: flex; /* Garante que o ícone e o texto (se houver) estejam alinhados */
+    align-items: center;
+    justify-content: center; /* Centraliza o ícone dentro do botão */
+    min-width: unset; /* Impede que o botão tenha largura mínima */
+}
+
+.input-wrapper button:hover {
+    background-color: #d32f2f;
+    border: none
+}
+
+.input-wrapper .remove-btn {
+    /* Garante que o ícone tenha a cor correta e tamanho */
+    font-size: 20px;
+    padding: 0;
+    margin: 0;
+    height: auto;
+    width: auto;
+}
