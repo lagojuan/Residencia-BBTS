@@ -71,27 +71,58 @@ document.addEventListener('DOMContentLoaded', function(){
 document.addEventListener('DOMContentLoaded', function () {
     const telaUsuario = document.querySelector('.tela-usuario');
     const telaDescricao = document.querySelector('.descricao');
-    const telaResultado = document.querySelector('.resultadogs');
+    const telaResultados = document.querySelector('.resultadogs');
+    const telaSolicitarVaga = document.querySelector('.svagaGestor');
+
     const vagas = document.querySelectorAll('.vaga');
+    const btnResultados = document.getElementById('resultados');
 
-    // Mostrar tela inicial
+    const linksHome = document.querySelectorAll('a[href="#home"]');
+    const linksVaga = document.querySelectorAll('a[href="#vaga"]');
+
+    function esconderTelas() {
+        telaUsuario.style.display = 'none';
+        telaDescricao.style.display = 'none';
+        telaResultados.style.display = 'none';
+        telaSolicitarVaga.style.display = 'none';
+    }
+
+    // Inicial: mostrar apenas telaUsuario
+    esconderTelas();
     telaUsuario.style.display = 'block';
-    telaDescricao.style.display = 'none';
-    telaResultado.style.display = 'none';
 
-    // Clique em uma vaga → vai para descrição
+    // Clique em vaga para abrir a descrição
     vagas.forEach(vaga => {
         vaga.addEventListener('click', () => {
-            telaUsuario.style.display = 'none';
+            esconderTelas();
             telaDescricao.style.display = 'block';
-            telaResultado.style.display = 'none';
         });
     });
 
-    const botaoResultados = document.getElementById('resultados');
-    botaoResultados.addEventListener('click', () => {
-        telaDescricao.style.display = 'none';
-        telaResultado.style.display = 'block';
+    // Clique em Resultados
+    if (btnResultados) {
+        btnResultados.addEventListener('click', () => {
+            esconderTelas();
+            telaResultados.style.display = 'block';
+        });
+    }
+
+    // Clique em "Solicitar Vaga"
+    linksVaga.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            esconderTelas();
+            telaSolicitarVaga.style.display = 'block';
+        });
+    });
+
+    // Clique em "Início"
+    linksHome.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            esconderTelas();
+            telaUsuario.style.display = 'block';
+        });
     });
 });
 
@@ -255,49 +286,4 @@ document.addEventListener('DOMContentLoaded', () => {
         container.appendChild(novoCampo);
     });
 });
-document.addEventListener('DOMContentLoaded', function () {
-    const telaUsuario = document.querySelector('.tela-usuario');
-    const telaDescricao = document.querySelector('.descricao');
-    const telaResultados = document.querySelector('.resultadogs');
-    const telaSolicitarVaga = document.querySelector('.svagaGestor');
 
-    const vagas = document.querySelectorAll('.vaga');
-    const btnResultados = document.getElementById('resultados');
-    const linkSolicitarVaga = document.querySelectorAll('a[href="#vaga"]');
-
-    // Função para esconder todas as telas
-    function esconderTelas() {
-        telaUsuario.style.display = 'none';
-        telaDescricao.style.display = 'none';
-        telaResultados.style.display = 'none';
-        telaSolicitarVaga.style.display = 'none';
-    }
-
-    // Mostrar tela de vagas no início
-    telaUsuario.style.display = 'block';
-
-    // Ao clicar em uma vaga
-    vagas.forEach(vaga => {
-        vaga.addEventListener('click', () => {
-            esconderTelas();
-            telaDescricao.style.display = 'block';
-        });
-    });
-
-    // Ao clicar em "Resultados"
-    if (btnResultados) {
-        btnResultados.addEventListener('click', () => {
-            esconderTelas();
-            telaResultados.style.display = 'block';
-        });
-    }
-
-    // Ao clicar em "Solicitar Vaga"
-    linkSolicitarVaga.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault(); // Impede o comportamento padrão do link
-            esconderTelas();
-            telaSolicitarVaga.style.display = 'block';
-        });
-    });
-});
