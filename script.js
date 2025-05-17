@@ -127,20 +127,25 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 //GRAFICOS 
- // Gráfico 1
+// Gráfico 1
  new Chart(document.getElementById('chart1'), {
     type: 'bar',
     data: {
       labels: ['BERT', 'AWS', 'Scrapy'],
       datasets: [{
-        label: 'Sugestões',
-        data: [20, 60, 30],
+        label: '',
+        data: [15, 53, 22],
         backgroundColor: ['#007bff', '#00c0ef', '#36a2eb']
       }]
     },
     options: {
       responsive: true,
-      scales: { y: { beginAtZero: true } }
+      scales: { y: { beginAtZero: true } },
+      plugins: {
+            legend: {
+                display: false // Desabilita a legenda
+            }
+        }
     }
   });
 
@@ -150,14 +155,19 @@ document.addEventListener('DOMContentLoaded', function () {
     data: {
       labels: ['Python', 'Selenium', 'Java', 'SQL', 'NoSQL', 'Linux'],
       datasets: [{
-        label: 'Frequência',
-        data: [100, 90, 85, 80, 75, 70],
+        label: '',
+        data: [84, 13, 81, 89, 83, 72],
         backgroundColor: ['#fce303', '#f7c106', '#f9a825', '#ff9800', '#ff5722', '#ff7043']
       }]
     },
     options: {
       responsive: true,
-      scales: { y: { beginAtZero: true } }
+      scales: { y: { beginAtZero: true } },
+      plugins: {
+            legend: {
+                display: false // Desabilita a legenda
+            }
+        }
     }
   });
 
@@ -167,14 +177,19 @@ document.addEventListener('DOMContentLoaded', function () {
     data: {
       labels: ['Criatividade', 'Analítico', 'Comunicação'],
       datasets: [{
-          label: 'Frequência',
-        data: [40, 80, 60],
+          label: '',
+        data: [37, 74, 68],
         backgroundColor: ['#66bb6a', '#43a047', '#a5d6a7']
       }]
     },
     options: {
       responsive: true,
-      scales: { y: { beginAtZero: true } }
+      scales: { y: { beginAtZero: true } },
+      plugins: {
+            legend: {
+                display: false // Desabilita a legenda
+            }
+        }
     }
   });
 
@@ -184,16 +199,22 @@ document.addEventListener('DOMContentLoaded', function () {
     data: {
       labels: ['Júnior', 'Pleno', 'Sênior'],
       datasets: [{
-        label: '% Compatibilidade',
-        data: [30, 70, 90],
+        label: '',
+        data: [28, 30, 32],
         backgroundColor: ['#ba68c8', '#7e57c2', '#5e35b1']
       }]
     },
     options: {
       responsive: true,
-      scales: { y: { beginAtZero: true } }
+      scales: { y: { beginAtZero: true } },
+      plugins: {
+            legend: {
+                display: false // Desabilita a legenda
+            }
+        }
     }
   });
+
   document.addEventListener('DOMContentLoaded', function () {
     const botaoResultados = document.getElementById('resultados');
     const telaDescricao = document.querySelector('.descricao');
