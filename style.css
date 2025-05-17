@@ -200,69 +200,164 @@ cursor: pointer;
 .vaga:hover{
     transform: scale(1.02);
 }
-.descricao {
-    background-color: #465EFF;
-    min-height: 100vh;
-    padding: 6rem 2rem 2rem 2rem;
-}
 .box-descricao {
-    display: flex;
-    flex-direction: column;
     background-color: white;
-    padding: 1.5rem 2rem;
-    border-radius: 10px;
-    margin: 2rem auto;
-    width: 95%;
-    max-width: 1000px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    margin: 20px;
+    border-radius: 30px;
+    cursor: pointer; /* Muda o cursor para uma mãozinha ao passar o mouse */
 }
-.cabecalho {
-    display: flex;
-    justify-content: space-between;
-    gap: 2rem;
-    font-size: 0.9rem;
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 0.5rem;
-    margin-bottom: 1rem;
+.box-descricao-text{
+    padding: 1rem;
+    text-align: left;
 }
-.status {
-    color: red;
+hr{
+    border: 1px solid #b1b1b194;
+    margin: 1rem 0;
+    width: 100%;
+}
+.status-andamento { /*Irão ter 3 tipos de status*/
+    color: rgb(1, 187, 51);
     font-weight: bold;
 }
-.cabecalho span:last-child{
-    display: block;
-    margin-right: 0;
-    margin-bottom: 5px;
-}
-.titulo {
-    order: 1;
-    margin-top: 0.5rem;
-    font-size: 1.3rem;
-}
-.detalhes {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 2rem;
-}
-.detalhes .esquerda, .detalhes .direita {
-    width: 48%;
-}
+
 .resultado {
-    margin-top: 2rem;
     text-align: right;
+    margin-top: 20px; 
+    margin-right: 20px; 
+    margin-bottom: 20px;
 }
 .resultado button {
-    background-color: #ccc;
+    background-color: #dadada;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border: none;
-    padding: 0.6rem 1.2rem;
-    border-radius: 0.5rem;
-    font-weight: bold;
+    width: 130px; /* Define uma largura fixa para o botão */
+    margin: 1px; 
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
     cursor: pointer;
-    transition: background-color 0.3s;
+    border-radius: 5px;
 }
 .resultado button:hover {
     background-color: #FCFB30;
 }
+/*PAGINA DOS RESULTADOS*/
+.resultadogs {
+    background-color: #f5f5f5;
+    color: #333;
+}
+.h1-dash {
+    font-size: 25px;
+    text-align: left;
+    color: rgb(0, 0, 0);
+    margin: 20px;
+  }
+.h2-dash {
+    font-size: 20px;
+    text-align: left;
+    color: rgb(0, 0, 0);
+    margin: 20px;
+}
+.barra-edi {
+    background-color: #ececec;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    
+}
+
+.barra-edi-icon {
+    display: flex;
+    flex-direction: row;
+    justify-content:left;
+    align-items: center;
+    padding: 6px;
+    margin-right: 5px; 
+    gap: 3px; /* Espaçamento entre ícone e texto */
+    cursor: pointer;
+}
+
+.barra-edi-icon:hover {
+    background-color: #d8d8d8; /* Cor de fundo ao passar o mouse */
+    height: 28px;
+}
+
+.barra-edi-icon img {
+    width: 25px;
+    height: 25px;
+}
+
+.barra-edi-icon p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.quad{
+    width: 250px;
+    height: 250px;
+    background-color: #FCFB30;
+    border-radius: 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza horizontalmente */
+    justify-content: center; /* Centraliza verticalmente */
+    transition: transform 0.2s ease-in-out; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    border: 2px solid #F4F583; /* Adiciona uma borda sutil */
+    cursor: pointer; 
+}
+.quad:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); 
+}
+.perfil-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; /* Faz a foto ser circular */
+    object-fit: cover; /* Garante que a foto preencha o círculo sem distorcer */
+    margin-bottom: 1px; 
+    border: 3px solid #fff; /* Adiciona uma borda branca à foto */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+.perfil-nome {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px; /* Espaço entre o nome e a foto */
+    margin-bottom: 5px; /* Espaço entre o nome e o retângulo azul */
+}
+
+.info-box {
+    background-color: #465EFF;
+    color: white;
+    padding: 8px 15px; 
+    border-radius: 5px; 
+    font-size: 14px;
+    text-align: center; 
+    width: fit-content; /* Ajusta a largura ao conteúdo */
+
+}
+.exp-ranking {
+    background-color: #465EFF;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: none;
+    width: 100px;
+    margin: 25px; 
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.exp-ranking:hover {
+    transform: scale(1.0); 
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); 
+    background-color: #7da6ff; 
+    cursor: pointer; 
+}
+
 /*PAGINA DOS RESULTADOS*/
 .resultadogs {
     background-color: #f5f5f5;
