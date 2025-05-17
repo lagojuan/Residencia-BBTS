@@ -104,37 +104,78 @@
                     </div>
                 </div>  
             </header>
-        <div class="box-descricao">
-            <div class="cabecalho">
-                <span class="data">Publicado en 21 de Abril de 2025</span>
-                <span class="codigo">Código:485734905</span>
-                <span class="status" id="statusVaga">Pendente</span>
-                <span>Nome do cargo:</span>
-                <h2 class="titulo">Engenheiro de Software</h2>
-            </div>
-      
-            <p><strong>Número de vagas:</strong><span>1</span></p>
-            <p><strong>Palavras Chave:</strong></p>
-            <p class="palavras">
-                Python, Java, Linux, NoSQL, Selenium, Criatividade, Anaítico, Comunicação, Engenharia de Software.
-            </p>
-            <div class="detalhes">
-                <div>
-                    <p><strong>Localização:</strong><br>Brasilia, DF</p>
-                    <p><strong>Modalidade de trabalho:</strong><br>Híbrido</p>
-                    <p><strong>Observações</strong><br>-----</p>
+            <div class="sfundo">
+                <div class="search"> 
+                    <input type="text" id="searchInput" placeholder="Pesquisar vaga">
+                    <button id="searchBtn" type="submit">
+                        <span class="material-symbols-outlined">search</span>
+                    </button>
                 </div>
-                <div class="direita">
-                    <p><strong>Prioridade:</strong><br>Alta</p>
-                    <p><strong>Nivel de experiência:</strong><br>Senior</p>
+            </div>
+            <div class="content">
+                <h1>Vagas criadas por você</h1>
+                <div class="box-descricao">
+                    <div class="box-descricao-text">
+                        <div class="form-horizontal">
+                        <p >Publicado em 21 de Abril de 2025</p>
+                        <p>Código: 485734905</p>
+                        <p class="status-andamento">Em Andamento</p>
+                         </div>
+                        <strong>Nome do Cargo: Engenheiro de Software</strong>
+                        <hr/>
+                   
+                        <div style="gap: 8px; margin-bottom: 12px;">
+                            <strong>Número de vagas:</strong>
+                            <span>1</span>
+                        </div>
+                        <div style="gap: 8px; margin-bottom: 12px;">
+                            <strong>Palavras Chave:</strong>
+                            <span>
+                            Python, Java, Linux, NoSQL, Selenium, Criatividade, Anaítico, Comunicação, Engenharia de Software.
+                            </span>
+                        </div>
+                        <div style="gap: 8px; margin-bottom: 12px;"> 
+                            <strong>Nível de experiência:</strong>
+                            <span>Sênior</span>
+                        </div>
+                        <div style="gap: 8px; margin-bottom: 12px;">
+                            <strong>Localização:</strong>
+                            <span>Brasília, DF</span>
+                        </div>
+                        <div style="gap: 8px; margin-bottom: 12px;">
+                            <strong>Modalidade de trabalho:</strong>
+                            <span>Híbrido</span>
+                        </div>
+                        <div style="gap: 8px; margin-bottom: 12px;">
+                            <strong>Prioridade:</strong>
+                            <span>Alta</span>
+                        </div>
+                        
+                        <div style="gap: 8px; margin-bottom: 12px;">
+                            <strong>Observações: </strong>
+                            <span></span>
+                        </div>
+                
+                    </div>
+                   
+                </div>
+                <div class="resultado">
+                    <button id="resultados">Resultados</button>
+                </div>
+
+                <div class="vaga">
+                    <p>Código: 357001743</p>
+                    <h2>Analista de Banco de Dados</h2>
+                    <p>Data: 26/02/2025</p>
+                </div>
+                <div class="vaga">
+                    <p>Código: 276598023</p>
+                    <h2>UX/UI Designer</h2>
+                    <p>Data: 18/12/2024</p>
                 </div>
             </div>
         </div>
-        <div class="resultado">
-            <button id="resultados">Resultados</button>
-        </div>
-    </div>
-    </div>
+        
 
     <div class="resultadogs">
         <header class="navbar">
@@ -151,33 +192,71 @@
                 </div>
             </div>  
         </header>
-        <section class="toolbar">
-            <button>📁 Arquivo</button>
-            <button>📤 Exportar</button>
-            <button>💾 Salvar</button>
-            <button>✏ Editar Visualização</button>
-          </section>
-        
-          <main class="dashboard">
-            <section class="card">
-              <h3>Tecnologias sugeridas para qualificação</h3>
-              <canvas id="chart1"></canvas>
-            </section>
-            <section class="card">
-              <h3>Tecnologias - Frequência nos Perfis</h3>
-              <canvas id="chart2"></canvas>
-            </section>
-            <section class="card">
-              <h3>Soft Skills - Frequência nos Perfis</h3>
-              <canvas id="chart3"></canvas>
-            </section>
-            <section class="card">
-              <h3>Relação de Experiência e Compatibilidade</h3>
-              <canvas id="chart4"></canvas>
-            </section>
-          </main>
-    </div>
+        <div class="barra-edi">
+            <div class="barra-edi-icon">
+                <img src="draft.svg" alt="">
+                <p>Arquivo</p>
+                <img src="arrow_baixo.svg" alt="">
+            </div>
+            <div class="barra-edi-icon">
+                <img src="file_export.svg" alt="">
+                <p>Exportar</p>
+                <img src="arrow_baixo.svg" alt="">
+            </div>
+            <div class="barra-edi-icon">
+                <img src="save.svg" alt="">
+                <p>Salvar</p>
+            </div>
+            <div class="barra-edi-icon">
+                <img src="edit.svg" alt="">
+                <p>Editar</p>
+            </div>   
+        </div>
 
+        <h2 class="h2-dash">Ranking de Perfis</h2>
+            <div class="form-horizontal">
+                <div class="quad">
+                    <p class="perfil-nome">1° Colocado</p>
+                    <img src="cand1.jpg" alt="Foto de Perfil" class="perfil-pic">
+                    <p class="perfil-nome">André Lima</p>
+                    <div class="info-box">85% dos Requisitos</div>
+                </div>
+                <div class="quad">
+                    <p class="perfil-nome">2° Colocado</p>
+                    <img src="cand2.jpg" alt="Foto de Perfil" class="perfil-pic">
+                    <p class="perfil-nome">Anna Cardoso</p>
+                    <div class="info-box">82% dos Requisitos</div>
+                </div>
+                <div class="quad">
+                    <p class="perfil-nome">3° Colocado</p>
+                    <img src="cand3.jpg" alt="Foto de Perfil" class="perfil-pic">
+                    <p class="perfil-nome">Lívia Silva</p>
+                    <div class="info-box">79% dos Requisitos</div>
+                </div>
+            </div>
+            <button class="exp-ranking">Expandir
+            </button>
+            <h1 class="h1-dash">Visualização dos Dados:</h1>
+
+            <section class="dashboard">
+                <section class="card">
+                <h3>Tecnologias sugeridas para qualificação</h3>
+                <canvas id="chart1"></canvas>
+                </section>
+                <section class="card">
+                <h3>Tecnologias - Frequência nos Perfis</h3>
+                <canvas id="chart2"></canvas>
+                </section>
+                <section class="card">
+                <h3>Soft Skills - Frequência nos Perfis</h3>
+                <canvas id="chart3"></canvas>
+                </section>
+                <section class="card">
+                <h3>Relação de Experiência e Compatibilidade</h3>
+                <canvas id="chart4"></canvas>
+                </section>
+            </section>
+    </div>
 
     <div class="svagaGestor" style="display: none;">
         <header class="navbar">
