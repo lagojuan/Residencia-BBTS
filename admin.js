@@ -28,69 +28,73 @@
     });
 });
 document.addEventListener('DOMContentLoaded', function () {
+    // Seleção das telas
     const telaUsuario = document.querySelector('.tela-admin');
     const telaDescricao = document.querySelector('.descricao');
     const telaResultados = document.querySelector('.resultadoadm');
     const telaVagaSolicitada = document.querySelector('.svagaAdm');
-    const telaGeral = document.querySelector('.geral');
+    const telaGeral = document.querySelector('.geral'); 
 
     const vagas = document.querySelectorAll('.vaga');
     const btnResultados = document.getElementById('resultados');
-
+ 
     const linksHome = document.querySelectorAll('a[href="#home"]');
     const linksVaga = document.querySelectorAll('a[href="#vaga"]');
     const linksGeral = document.querySelectorAll('a[href="#geral"]');
 
     function esconderTelas() {
-        telaUsuario.style.display = 'none';
-        telaDescricao.style.display = 'none';
-        telaResultados.style.display = 'none';
-        telaVagaSolicitada.style.display = 'none';
-        telaGeral.style.display = ''
+        const telas = [telaUsuario, telaDescricao, telaResultados, telaVagaSolicitada, telaGeral];
+        telas.forEach(tela => {
+            if (tela) tela.style.display = 'none';
+        });
     }
 
     esconderTelas();
-    telaUsuario.style.display = 'block';
+    if (telaUsuario) telaUsuario.style.display = 'block';
 
-    // Clique em vaga para abrir a descrição
-    vagas.forEach(vaga => {
-        vaga.addEventListener('click', () => {
-            esconderTelas();
-            telaDescricao.style.display = 'block';
-        });
-    });
-
-    // Clique em Resultados
-    if (btnResultados) {
-        btnResultados.addEventListener('click', () => {
-            esconderTelas();
-            telaResultados.style.display = 'block';
+    if (vagas) {
+        vagas.forEach(vaga => {
+            vaga.addEventListener('click', () => {
+                esconderTelas();
+                if (telaDescricao) telaDescricao.style.display = 'block';
+            });
         });
     }
 
-    // Clique em "Solicitar Vaga"
-    linksVaga.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
+    if (btnResultados) {
+        btnResultados.addEventListener('click', () => {
             esconderTelas();
-            telaVagaSolicitada.style.display = 'block';
+            if (telaResultados) telaResultados.style.display = 'block';
         });
-    });
-        // Clique em "Gera"
-    linksVaga.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            esconderTelas();
-            telaGeral.style.display = 'block';
-        });
-    });
+    }
 
-    // Clique em "Início"
-    linksHome.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            esconderTelas();
-            telaUsuario.style.display = 'block';
+    if (linksVaga) {
+        linksVaga.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                esconderTelas();
+                if (telaVagaSolicitada) telaVagaSolicitada.style.display = 'block';
+            });
         });
-    });
+    }
+
+    if (linksGeral) {
+        linksGeral.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                esconderTelas();
+                if (telaGeral) telaGeral.style.display = 'block';
+            });
+        });
+    }
+
+    if (linksHome) {
+        linksHome.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                esconderTelas();
+                if (telaUsuario) telaUsuario.style.display = 'block';
+            });
+        });
+    }
 });
