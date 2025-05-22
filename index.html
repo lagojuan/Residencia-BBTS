@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+    <!--TELA LOGIN-->
     <div id="login" class="login">
         <div class="logobb">
             <img src="img/bbts[1].jpg" alt="logo-bbts">
@@ -43,7 +44,7 @@
    <!--INTERFACE DO USUARIO-->
 
     <div id="usuario" class="usuario" style="display: none;">
-          <!--TELA INICIAL GESTOR-->
+          <!--NAVBAR-->
         <div class="tela-usuario">
             <header class="navbar">
                 <div class="logo">
@@ -54,12 +55,21 @@
                         <a href="#home">Início</a>
                         <a href="#vaga">Solicitar Vaga</a>  
                     </div>
+                    <div class="user-menu">
                     <div class="user-icon">
                         <i class="fas fa-user-circle"></i>
                     </div>
+                    <div class="dropdown-menu" id="dropdownMenu">
+          <p><strong>ID:</strong> 74561329</p>
+          <p><strong>Nome:</strong> Alberto Nogueira</p>
+          <p><strong>Setor:</strong> Desenvolvimento de Software</p>
+          <p><strong>Cargo:</strong> Gestor de Projetos</p>
+          <button class="logout-btn">Sair da Conta</button>
+                 </div>
+                    </div>
                 </div>  
             </header>
-        
+        <!--TELA GESTOR-->
             <div class="sfundo">
                 <div class="search"> 
                     <input type="text" id="searchInput" placeholder="Pesquisar vaga">
@@ -99,8 +109,17 @@
                         <a href="#home">Início</a>
                         <a href="#vaga">Solicitar Vaga</a>  
                     </div>
+                    <div class="user-menu">
                     <div class="user-icon">
                         <i class="fas fa-user-circle"></i>
+                    </div>
+                    <div class="dropdown-menu" id="dropdownMenu">
+           <p><strong>ID:</strong> 74561329</p>
+          <p><strong>Nome:</strong> Alberto Nogueira</p>
+          <p><strong>Setor:</strong> Desenvolvimento de Software</p>
+          <p><strong>Cargo:</strong> Gestor de Projetos</p>
+          <button class="logout-btn">Sair da Conta</button>
+                 </div>
                     </div>
                 </div>  
             </header>
@@ -176,22 +195,31 @@
             </div>
         </div>
         
-
+<!--RESULTADOS-->
     <div class="resultadogs">
-        <header class="navbar">
-            <div class="logo">
-                <img src="img/logoGraQ.png" alt="Logo" style="height: 35px;">
-            </div>
-            <div class="nav-right">
-                <div class="links">
-                    <a href="#home">Início</a>
-                    <a href="#vaga">Solicitar Vaga</a>  
+       <header class="navbar">
+                <div class="logo">
+                    <img src="img/logoGraQ.png" alt="Logo" style="height: 35px;">
                 </div>
-                <div class="user-icon">
-                    <i class="fas fa-user-circle"></i>
-                </div>
-            </div>  
-        </header>
+                <div class="nav-right">
+                    <div class="links">
+                        <a href="#home">Início</a>
+                        <a href="#vaga">Solicitar Vaga</a>  
+                    </div>
+                    <div class="user-menu">
+                    <div class="user-icon">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <div class="dropdown-menu" id="dropdownMenu">
+              <p><strong>ID:</strong> 74561329</p>
+          <p><strong>Nome:</strong> Alberto Nogueira</p>
+          <p><strong>Setor:</strong> Desenvolvimento de Software</p>
+          <p><strong>Cargo:</strong> Gestor de Projetos</p>
+          <button class="logout-btn">Sair da Conta</button>
+                 </div>
+                    </div>
+                </div>  
+            </header>
         <div class="barra-edi">
             <div class="barra-edi-icon">
                 <img src="draft.svg" alt="">
@@ -257,22 +285,31 @@
                 </section>
             </section>
     </div>
-
+<!--SOLICITAR VAGA-->
     <div class="svagaGestor" style="display: none;">
-        <header class="navbar">
-            <div class="logo">
-                <img src="img/logoGraQ.png" alt="Logo" style="height: 35px;">
-            </div>
-            <div class="nav-right">
-                <div class="links">
-                    <a href="#home">Início</a>
-                    <a href="#vaga">Solicitar Vaga</a>  
+      <header class="navbar">
+                <div class="logo">
+                    <img src="img/logoGraQ.png" alt="Logo" style="height: 35px;">
                 </div>
-                <div class="user-icon">
-                    <i class="fas fa-user-circle"></i>
-                </div>
-            </div>  
-        </header>
+                <div class="nav-right">
+                    <div class="links">
+                        <a href="#home">Início</a>
+                        <a href="#vaga">Solicitar Vaga</a>  
+                    </div>
+                    <div class="user-menu">
+                    <div class="user-icon">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <div class="dropdown-menu" id="dropdownMenu">
+           <p><strong>ID:</strong> 74561329</p>
+          <p><strong>Nome:</strong> Alberto Nogueira</p>
+          <p><strong>Setor:</strong> Desenvolvimento de Software</p>
+          <p><strong>Cargo:</strong> Gestor de Projetos</p>
+          <button class="logout-btn">Sair da Conta</button>
+                 </div>
+                    </div>
+                </div>  
+            </header>
         <main>
             <form action="/submit-vaga" method="post">
                 

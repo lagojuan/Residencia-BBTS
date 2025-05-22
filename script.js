@@ -308,3 +308,51 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+//USER MENU
+document.addEventListener('DOMContentLoaded', function() {
+  setupUserDropdowns();
+  
+  setupMutationObserver();
+});
+
+function setupUserDropdowns() {
+  function closeAllDropdowns() {
+    document.querySelectorAll('.dropdown-menu').forEach(menu => {
+      menu.style.display = 'none';
+    });
+  }
+
+  document.querySelectorAll('.user-icon').forEach(icon => {
+    icon.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const menu = this.closest('.user-menu').querySelector('.dropdown-menu');
+      
+      if (menu.style.display !== 'block') {
+        closeAllDropdowns();
+      }
+      
+      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    });
+  });
+
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.user-menu')) {
+      closeAllDropdowns();
+    }
+  });
+}
+
+function setupMutationObserver() {
+  const observer = new MutationObserver(function(mutations) {
+    mutations.forEach(function(mutation) {
+      if (mutation.addedNodes.length) {
+        setupUserDropdowns(); 
+      }
+    });
+  });
+  
+  observer.observe(document.body, {
+    childList: true,
+    subtree: true
+  });
+}
