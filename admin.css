@@ -348,3 +348,229 @@ hr{
     margin: 0 0 12px 0;
     color: #3f51b5;
   }
+  /*VAGAS SOLICITADAS*/
+  .svagaAdm{
+     margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+   background-color: #f5f5f7;
+  }
+.svagaAdm .app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.search-bar-container {
+  background-color: #FCFB30;
+  padding: 15px 0;
+}
+.search-wrapper {
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+}
+.search-wrapper input {
+  flex: 1;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px 0 0 6px;
+  font-size: 16px;
+}
+.search-wrapper button {
+  background-color: #465EFF;
+  color: white;
+  border: none;
+  padding: 0 25px;
+  border-radius: 0 6px 6px 0;
+  cursor: pointer;
+}
+.search-wrapper button:hover {
+  background-color: #3a4fd3;
+}
+.filter-bar {
+  background-color: white;
+  padding: 15px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+.filter-wrapper {
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.filter-group label {
+  font-size: 14px;
+  color: #555;
+}
+.filter-group select {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+.filter-button {
+  background-color: #465EFF;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.filter-button:hover {
+  background-color: #3a4fd3;
+}
+.main-content {
+  flex: 1;
+  padding: 30px 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.content-header {
+  margin-bottom: 25px;
+  width: 100%;
+  max-width: 800px;
+}
+.content-header h1 {
+  font-size: 28px;
+  color: #333;
+}
+.general-tag {
+  display: inline-block;
+  background-color: #f0f0f0;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #555;
+}
+.jobs-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  max-width: 800px;
+}
+.svagaAdm .job-card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.job-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+.job-priority {
+  font-weight: 600;
+  font-size: 15px;
+  padding: 4px 10px;
+  border-radius: 12px;
+  text-transform: capitalize;
+  border: 1px solid #979797bb;
+  background-color: #fde8e800;
+  color: #000;
+}
+.job-date {
+  color: #666;
+  font-size: 14px;
+}
+.job-info p {
+  margin: 8px 0;
+  color: #444;
+}
+.no-jobs {
+  text-align: center;
+  padding: 40px;
+  color: #666;
+  font-size: 18px;
+}
+.feedback-bar {
+  width: 100%;
+  max-width: 800px;
+  margin: 30px auto 20px auto;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background-color: #ffffff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+.feedback-bar textarea {
+  flex: 1;
+  resize: none;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  height: 80px;
+}
+.feedback-bar button {
+  padding: 10px 15px;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  min-width: 100px;
+}
+.approve-button {
+   background-color: #4CAF50; } 
+
+.approve-button:hover { 
+    background-color: #45a049; } 
+.reject-button {
+     background-color: #f44336; 
+    } 
+.reject-button:hover { 
+    background-color: #e53935; }
+  /*GERAL*/ 
+  .geral{
+    min-height: 100vh;
+    background-color: #465EFF;
+  }
+ .geral .content {
+  padding: 80px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.jobs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+.job-card {
+  background-color: white;
+  color: black;
+  border-radius: 12px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+.job-card:hover {
+  transform: scale(1.02);
+}
+.full-width {
+  grid-column: span 2;
+}
+.card-icon {
+  font-size: 110px;
+  margin-bottom: 60px;
+  color: #465EFF;
+}
+.job-card h3 {
+  font-size: 20px;
+}

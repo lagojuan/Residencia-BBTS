@@ -188,21 +188,21 @@
             </header>
         <div class="barra-edi">
             <div class="barra-edi-icon">
-                <img src="draft.svg" alt="">
+                <img src="img/draft.svg" alt="">
                 <p>Arquivo</p>
-                <img src="arrow_baixo.svg" alt="">
+                <img src="img/arrow_baixo.svg" alt="">
             </div>
             <div class="barra-edi-icon">
-                <img src="file_export.svg" alt="">
+                <img src="img/file_export.svg" alt="">
                 <p>Exportar</p>
-                <img src="arrow_baixo.svg" alt="">
+                <img src="img/arrow_baixo.svg" alt="">
             </div>
             <div class="barra-edi-icon">
-                <img src="save.svg" alt="">
+                <img src="img/save.svg" alt="">
                 <p>Salvar</p>
             </div>
             <div class="barra-edi-icon">
-                <img src="edit.svg" alt="">
+                <img src="img/edit.svg" alt="">
                 <p>Editar</p>
             </div>   
         </div>
@@ -211,19 +211,19 @@
             <div class="form-horizontal">
                 <div class="quad">
                     <p class="perfil-nome">1° Colocado</p>
-                    <img src="cand1.jpg" alt="Foto de Perfil" class="perfil-pic">
+                    <img src="img/cand1.jpg" alt="Foto de Perfil" class="perfil-pic">
                     <p class="perfil-nome">André Lima</p>
                     <div class="info-box">85% dos Requisitos</div>
                 </div>
                 <div class="quad">
                     <p class="perfil-nome">2° Colocado</p>
-                    <img src="cand2.jpg" alt="Foto de Perfil" class="perfil-pic">
+                    <img src="img/cand2.jpg" alt="Foto de Perfil" class="perfil-pic">
                     <p class="perfil-nome">Anna Cardoso</p>
                     <div class="info-box">82% dos Requisitos</div>
                 </div>
                 <div class="quad">
                     <p class="perfil-nome">3° Colocado</p>
-                    <img src="cand3.jpg" alt="Foto de Perfil" class="perfil-pic">
+                    <img src="img/cand3.jpg" alt="Foto de Perfil" class="perfil-pic">
                     <p class="perfil-nome">Lívia Silva</p>
                     <div class="info-box">79% dos Requisitos</div>
                 </div>
@@ -252,10 +252,79 @@
             </section>
     </div>
 <!---VAGAS SOLICITADAS-->
-<div class="svagaAdm">
-    <h1>kassssss</h1>
-    <h2>bnjbjsbkjsn</h2>
-    <h3>nbazbdjbsj</h3>
+<div class="svagaAdm" style="display: none;">
+                <header class="navbar">
+                <div class="logo">
+                    <img src="img/logoGraQ.png" alt="Logo" style="height: 35px;">
+                </div>
+                <div class="nav-right">
+                    <div class="links">
+                        <a href="#home">Início</a>
+                        <a href="#vaga">Vagas Solicitadas</a> 
+                         <a href="#geral">Geral</a> 
+                    </div>
+                    <div class="user-menu">
+                    <div class="user-icon">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <div class="dropdown-menu" id="dropdownMenu">
+          <p><strong>ID:</strong> 89374083</p>
+          <p><strong>Nome:</strong> Laís Azevedo</p>
+          <p><strong>Setor:</strong> Gestão de Talentos</p>
+          <p><strong>Cargo:</strong> Recrutador</p>
+          <button class="logout-btn">Sair da Conta</button>
+                 </div>
+                    </div>
+                </div>  
+            </header>
+    <div class="search-bar-container">
+      <div class="search-wrapper">
+        <input type="text" id="searchInput" placeholder="Pesquisar vaga..."/>
+        <button id="searchButton"><i class="fas fa-search"></i></button>
+      </div>
+    </div>
+
+    <div class="filter-bar">
+      <div class="filter-wrapper">
+        <div class="filter-group">
+          <label for="priorityFilter">Prioridade:</label>
+          <select id="priorityFilter">
+            <option value="all">Todas</option>
+            <option value="alta">Alta</option>
+            <option value="média">Média</option>
+            <option value="baixa">Baixa</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="dateFilter">Data:</label>
+          <select id="dateFilter">
+            <option value="all">Todas</option>
+            <option value="newest">Mais recentes</option>
+            <option value="oldest">Mais antigas</option>
+          </select>
+        </div>
+
+        <button id="applyFilters" class="filter-button">Aplicar Filtros</button>
+      </div>
+    </div>
+   
+    <main class="main-content">
+      <div class="content-header">
+        <h1>Vagas solicitadas</h1>
+        <h2></h2>
+        <div class="general-tag"></div>
+      </div>
+
+      <div class="jobs-container" id="jobsContainer"></div>
+    </main>
+
+  <div class="feedback-bar">
+    <textarea id="feedbackText" placeholder="Escreva seu parecer..."></textarea>
+    <button class="approve-button">Aprovar</button>
+    <button class="reject-button">Reprovar</button>
+  </div>
+
 </div>
 <!--GERAL-->
     <div class="geral">
