@@ -448,18 +448,19 @@ hr{
     text-align: left;
     color: rgb(0, 0, 0);
 }
-.svagaGestor button {
+.cria-vaga {
     float: right;
     background-color: #465EFF;
     color: white;
     border: none;
     margin: 1rem; 
+    width: 130px;
     padding: 0.5rem 1rem;
     font-size: 1rem;
     cursor: pointer;
     border-radius: 5px;
 }
-.svagaGestor button:hover {
+.cria-vaga:hover {
     background-color: #17a01b;
     transition: background-color 0.3s; /* Adiciona uma transição suave para a mudança de cor */
 }
