@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function(){
         }
     });
 });
-
+// Vaga botão 
 document.addEventListener('DOMContentLoaded', function () {
     const telaUsuario = document.querySelector('.tela-usuario');
     const telaDescricao = document.querySelector('.descricao');
