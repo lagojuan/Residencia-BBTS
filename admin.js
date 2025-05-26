@@ -276,9 +276,6 @@ function setupRequestedJobs() {
           <p><strong>Solicitante:</strong> ${job.requester}</p>
           <p><strong>Setor:</strong> ${job.department}</p>
         </div>
-        <div class="job-actions">
-          <button class="view-details">Ver detalhes</button>
-        </div>
       `;
 
       jobsContainer.appendChild(jobCard);
