@@ -412,6 +412,7 @@ hr{
   max-width: 1000px;
   border-radius: 4px;
   font-family: Arial, sans-serif;
+  cursor: pointer;
 }
 
 .anls-info p,
@@ -420,6 +421,47 @@ hr{
   margin: 5px 0;
   font-size: 16px;
   color: #000;
+}
+.anls-opcoes {
+  display: none;
+  background-color: #f2f2f2;
+  padding: 20px 25px;
+  border-top: 1px solid #ccc;
+  border-radius: 0 0 4px 4px;
+  gap: 15px;
+}
+
+.analise.ativo .anls-opcoes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.anls-opcoes label {
+  flex-basis: 100%;
+  font-weight: bold;
+}
+.anls-opcoes input {
+  padding: 8px;
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.btn-aprovar {
+  background-color: green;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.btn-reprovar {
+  background-color: red;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
   /*GERAL*/ 
