@@ -358,7 +358,8 @@ hr{
   /*VAGAS SOLICITADAS*/
   .svagaAdm{
   font-family: Arial, sans-serif;
-   background-color: #f5f5f7;
+   background-color: #ededed;
+   height: 100vh;
   }
 .filters-bar {
   background-color: white;
@@ -397,29 +398,24 @@ hr{
 .btn-filtro:hover {
   background-color: #3244d0;
 }
-.svagaAdm h1{
-  color: #000;
-  background-color: #fff;
-}
-.analise {
+.analise-box {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  border: 1px solid #0077ff;
+  background-color: #fff;
   padding: 15px 20px;
   margin: 20px auto;
   width: 95%;
   max-width: 1000px;
   border-radius: 4px;
-  font-family: Arial, sans-serif;
+  cursor: pointer;
 }
 
 .anls-info p,
 .anls-data p {
-   background-color: #f2f2f2;
   margin: 5px 0;
   font-size: 16px;
-  color: #000;
+  color: #000; 
 }
 
   /*GERAL*/ 
