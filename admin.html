@@ -285,47 +285,37 @@
             </button>
         </div>
     </div>
+<div class="filters-bar">
+    <label for="prioridade">Prioridade:</label>
+  <select id="prioridade">
+    <option>Todas</option>
+    <option>Alta</option>
+    <option>Média</option>
+    <option>Baixa</option>
+  </select>
 
-    <div class="filter-bar">
-      <div class="filter-wrapper">
-        <div class="filter-group">
-          <label for="priorityFilter">Prioridade:</label>
-          <select id="priorityFilter">
-            <option value="all">Todas</option>
-            <option value="alta">Alta</option>
-            <option value="média">Média</option>
-            <option value="baixa">Baixa</option>
-          </select>
-        </div>
+  <label for="data">Data:</label>
+  <select id="data">
+    <option>Todas</option>
+    <option>Recentes</option>
+    <option>Antigas</option>
+  </select>
 
-        <div class="filter-group">
-          <label for="dateFilter">Data:</label>
-          <select id="dateFilter">
-            <option value="all">Todas</option>
-            <option value="newest">Mais recentes</option>
-            <option value="oldest">Mais antigas</option>
-          </select>
-        </div>
-
-        <button id="applyFilters" class="filter-button">Aplicar Filtros</button>
-      </div>
+  <button class="btn-filtro">Aplicar Filtros</button>
     </div>
    
-    <main class="main-content">
-      <div class="content-header">
-        <h1>Vagas solicitadas</h1>
-        <h2></h2>
-        <div class="general-tag"></div>
-      </div>
+    <h1>Vagas em analise:</h1>
 
-      <div class="jobs-container" id="jobsContainer"></div>
-    </main>
-
-  <div class="feedback-bar">
-    <textarea id="feedbackText" placeholder="Escreva seu parecer..."></textarea>
-    <button class="approve-button">Aprovar</button>
-    <button class="reject-button">Reprovar</button>
+    <div class="analise">
+  <div class="anls-info">
+    <p><strong>Prioridade:</strong> Alta</p>
+    <p><strong>Solicitante:</strong> Rodrigo Silva</p>
+    <p><strong>Setor:</strong> Software e Testes</p>
   </div>
+  <div class="anls-data">
+    <p>Data: 21/04/2025</p>
+  </div>
+</div>
 
 </div>
 <!--GERAL-->

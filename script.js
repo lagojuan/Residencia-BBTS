@@ -214,7 +214,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
   });
-
+// RESULTADO
   document.addEventListener('DOMContentLoaded', function () {
     const botaoResultados = document.getElementById('resultados');
     const telaDescricao = document.querySelector('.descricao');
