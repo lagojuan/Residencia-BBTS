@@ -402,7 +402,7 @@ hr{
   background-color: #fff;
 }
 .analise {
-  display: flex;
+  display: block;
   justify-content: space-between;
   align-items: flex-start;
   border: 1px solid #0077ff;
@@ -429,10 +429,12 @@ hr{
   border-top: 1px solid #ccc;
   border-radius: 0 0 4px 4px;
   gap: 15px;
+  width: 100%;
+  margin-top: 10px;
 }
 
 .analise.ativo .anls-opcoes {
-  display: flex;
+  display: block;
   flex-wrap: wrap;
   align-items: center;
 }
