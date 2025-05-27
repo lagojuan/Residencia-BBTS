@@ -236,3 +236,21 @@ function setupMutationObserver() {
   });
 }
 // ============== VAGAS SOLICITADAS ==============
+document.addEventListener("DOMContentLoaded", function () {
+  const boxes = document.querySelectorAll(".analise");
+
+  boxes.forEach((box) => {
+    box.addEventListener("click", function (e) {
+      if (
+        e.target.tagName === "BUTTON" ||
+        e.target.tagName === "INPUT" ||
+        e.target.tagName === "LABEL"
+      ) {
+        return;
+      }
+
+      box.classList.toggle("ativo");
+    });
+  });
+});
+
