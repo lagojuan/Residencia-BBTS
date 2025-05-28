@@ -398,10 +398,6 @@ hr{
 .btn-filtro:hover {
   background-color: #3244d0;
 }
-.svagaAdm h1{
-  color: #000;
-  background-color: #fff;
-}
 .analise {
   display: block;
   justify-content: space-between;
