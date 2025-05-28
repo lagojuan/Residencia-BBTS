@@ -399,23 +399,30 @@ hr{
   background-color: #3244d0;
 }
 .analise {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.analise p{
+  font-size: 16px;
+  margin: 8px;
+}
+.analise-box {
+  display: flex;
   justify-content: space-between;
   align-items: flex-start;
   background-color: #fff;
-  padding: 15px 20px;
-  margin: 20px auto;
-  width: 95%;
-  max-width: 1000px;
+  box-shadow: 0 2px 2px rgba(0,0,0,0.1);
+  padding: 8px 8px;
+  width: 700px;
   border-radius: 4px;
-  font-family: Arial, sans-serif;
+  margin-bottom: 15px;
   cursor: pointer;
 }
-.anls-info p,
-.anls-data p {
-  margin: 5px 0;
-  font-size: 16px;
-  color: #000; 
+.anls-data{
+  margin-left: auto;
+  text-align: right;
 }
 .anls-opcoes {
   display: none;
