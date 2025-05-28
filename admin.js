@@ -237,10 +237,12 @@ function setupMutationObserver() {
 }
 // ============== VAGAS SOLICITADAS ==============
 document.addEventListener("DOMContentLoaded", function () {
-  const boxes = document.querySelectorAll(".analise");
+  // Seleciona todas as caixas individuais (analise-box)
+  const analiseBoxes = document.querySelectorAll(".analise-box");
 
-  boxes.forEach((box) => {
+  analiseBoxes.forEach((box) => {
     box.addEventListener("click", function (e) {
+      // Impede que o clique nos botões, input ou label feche a caixa
       if (
         e.target.tagName === "BUTTON" ||
         e.target.tagName === "INPUT" ||
@@ -249,8 +251,15 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
 
-      box.classList.toggle("ativo");
+      // Fecha qualquer outra caixa que esteja aberta
+      analiseBoxes.forEach(otherBox => {
+        if (otherBox !== box && otherBox.classList.contains("ativo")) {
+          otherBox.classList.remove("ativo");
+        }
+      });
+
+      // Alterna a classe 'ativo' na caixa clicada
+      this.classList.toggle("ativo");
     });
   });
 });
-

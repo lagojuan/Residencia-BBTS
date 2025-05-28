@@ -398,18 +398,15 @@ hr{
 .btn-filtro:hover {
   background-color: #3244d0;
 }
-.analise {
+.analise-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.analise p{
-  font-size: 16px;
-  margin: 8px;
-}
 .analise-box {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
   background-color: #fff;
@@ -420,36 +417,45 @@ hr{
   margin-bottom: 15px;
   cursor: pointer;
 }
-.anls-data{
+.analise-info p{
+  margin: 2px 0;
+  font-size: 16px;
+}
+.analise-data{
   margin-left: auto;
   text-align: right;
 }
-.anls-opcoes {
+.analise-opcoes {
   display: none;
   background-color: #f2f2f2;
   padding: 20px 25px;
   border-top: 1px solid #ccc;
   border-radius: 0 0 4px 4px;
-  gap: 15px;
   width: 100%;
   margin-top: 10px;
-}
-
-.analise.ativo .anls-opcoes {
-  display: block;
+  box-sizing: border-box;
+  flex-basis: 100%;
+  display: flex;
   flex-wrap: wrap;
+  justify-content: flex-start;
   align-items: center;
 }
 
-.anls-opcoes label {
+.analise-box.ativo .analise-opcoes {
+  display: flex;
+}
+
+.analise-opcoes label {
   flex-basis: 100%;
   font-weight: bold;
+  margin-bottom: 5px;
 }
-.anls-opcoes input {
+.analise-opcoes input {
   padding: 8px;
   width: 300px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  margin-right: 15px;
 }
 .btn-aprovar {
   background-color: green;
