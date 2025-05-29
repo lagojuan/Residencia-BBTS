@@ -1,7 +1,8 @@
-body {
+html, body {
     margin: 0;
+    padding: 0;
     font-family: Arial, sans-serif; /* Especificando a fonte padrão para não dar erro */
-    height: 100vh;
+    height: 100%;
 }
 /*NAVBAR*/
 .navbar {
@@ -357,10 +358,10 @@ hr{
   }
   /*VAGAS SOLICITADAS*/
   .svagaAdm{
-  font-family: Arial, sans-serif;
-   background-color: #ededed;
-   height: 100vh;
+  min-height: 100vh;
+  background-color: #ededed;
   }
+
 .filters-bar {
   background-color: white;
   padding: 25px 30px; /* Aumenta o espaçamento interno */
@@ -386,7 +387,7 @@ hr{
 }
 
 .btn-filtro {
-  background-color: #4255ff;
+  background-color: #465EFF;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -409,6 +410,7 @@ hr{
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
+  position: relative;
   background-color: #fff;
   box-shadow: 0 2px 2px rgba(0,0,0,0.1);
   padding: 8px 8px;
@@ -418,12 +420,26 @@ hr{
   cursor: pointer;
 }
 .analise-info p{
-  margin: 2px 0;
+  margin: 5px 0;
   font-size: 16px;
 }
-.analise-data{
-  margin-left: auto;
-  text-align: right;
+.analise-superior{
+  position: absolute;
+  top: 10px; /* Ajuste conforme necessário para a posição vertical */
+  right: 10px; /* Ajuste conforme necessário para a posição horizontal  /* Ajuste o tamanho da fonte se precisar */
+
+}
+.analise-detail {
+  border-top: #d1d1d1 solid 2px;
+  border-bottom: #d1d1d1 solid 2px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position: relative; /* Adicionado para posicionamento absoluto do código da vaga dentro dele */
+  width: 100%; /* Garante que o div ocupa a largura total */
+}
+.analise-detail p {
+  margin: 5px 0;
+  font-size: 16px;
 }
 .analise-opcoes {
   display: none;
@@ -433,7 +449,6 @@ hr{
   margin-bottom: 10px;
   box-sizing: border-box;
   flex-basis: 100%;
-  flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
 }
@@ -454,8 +469,18 @@ hr{
   border-radius: 4px;
   margin-right: 15px;
 }
+.analise-justificativa {
+  padding-top: 20px;
+}
+.analise-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+  margin-top: 20px;
+  padding-right: 10px;
+}
 .btn-aprovar {
-  background-color: green;
+  background-color: #465EFF;
   color: white;
   padding: 8px 16px;
   border: none;
@@ -463,49 +488,19 @@ hr{
   cursor: pointer;
 }
 .btn-reprovar {
-  background-color: red;
+  background-color: #465EFF;
   color: white;
   padding: 8px 16px;
   border: none;
   border-radius: 10px;
   cursor: pointer;
 }
-
-  /*GERAL*/ 
-  .geral{
-    min-height: 100vh;
-    background-color: #465EFF;
-  }
- .geral .content {
-  padding: 80px 20px;
-  max-width: 800px;
-  margin: 0 auto;
+.btn-aprovar:hover {
+  background-color: darkgreen;
 }
-.jobs-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
+.btn-reprovar:hover {
+  background-color: darkred;
 }
-.job-card {
-  background-color: white;
-  color: black;
-  border-radius: 12px;
-  padding: 30px;
-  text-align: center;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  transition: transform 0.2s ease;
-}
-.job-card:hover {
-  transform: scale(1.02);
-}
-.full-width {
-  grid-column: span 2;
-}
-.card-icon {
-  font-size: 110px;
-  margin-bottom: 60px;
-  color: #465EFF;
-}
-.job-card h3 {
-  font-size: 20px;
+.hidden {
+  display: none !important;
 }
