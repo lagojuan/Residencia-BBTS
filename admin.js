@@ -287,14 +287,12 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
 
-      // Fecha qualquer outra caixa que esteja aberta
       analiseBoxes.forEach(otherBox => {
         if (otherBox !== box && otherBox.classList.contains("ativo")) {
           otherBox.classList.remove("ativo");
         }
       });
 
-      // Alterna a classe 'ativo' na caixa clicada
       this.classList.toggle("ativo");
     });
   });
