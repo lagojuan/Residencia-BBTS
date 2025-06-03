@@ -1,7 +1,7 @@
 const { Router } = require("express");
 const router = Router();
 
-// get post put delete
+//métodos get post put delete
 router.get("/criarvagas", (req, res) =>{
     res.send("Dados recebidos");
 });
@@ -13,8 +13,8 @@ router.put("/criarvagas/:id", (req, res) =>{
     res.send('Atualizando' + id +  '...');
 });
 router.delete("/criarvagas/:id", (req, res) =>{
-     const { id } = req.params
-    res.send("Dados recebidos" +id);
+    const { id } = req.params
+    res.send("Dados recebidos" + id);
 });
 
 module.exports = router;
