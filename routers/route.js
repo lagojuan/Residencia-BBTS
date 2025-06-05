@@ -4,8 +4,8 @@ const vagasControle = require("../controllers/controles")
 
 //métodos get post put delete
 router.get("/criarvagas", (req, res) =>{
-    const resposta = vagasControle.buscar();
-    res.send(resposta);
+    const listaVagas = vagasControle.buscar();
+    listaVagas.then(vaga => res.status(200).json(vaga)).catch((error) => res.status(400).json(error.message))
 });
 router.post("/criarvagas", (req, res) =>{
     const resposta = vagasControle.criar();

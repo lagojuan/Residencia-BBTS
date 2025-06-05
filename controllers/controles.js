@@ -1,6 +1,7 @@
+const modelos = require("../models/modelos");
 class vagasControle {
     buscar (){
-        return "Procurando vaga";
+        return modelos.listar();
     }
     criar (){
         return "Criar vaga";
