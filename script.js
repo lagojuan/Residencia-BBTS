@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function(){
             event.preventDefault();
 
             const valorSelecionado = tipoUsuarioSelect.value;
-            if (valorSelecionado === 'usuario') {
+            if (valorSelecionado === 'solicitante') {
                 if (telaLogin && telaUsuario) {
                     telaLogin.style.display = 'none';
                     telaUsuario.style.display = 'block';
