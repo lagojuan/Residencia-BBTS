@@ -39,34 +39,51 @@ document.addEventListener('DOMContentLoaded', function(){
     this.classList.toggle('visible'); 
   });
 //Pesquisa Tela Inicial Gestor 
-  document.addEventListener('DOMContentLoaded', function() {
-    const searchBtn = document.getElementById('searchBtn');
-    const searchInput = document.getElementById('searchInput');
+document.addEventListener('DOMContentLoaded', function () {
+    const searchInputs = document.querySelectorAll('input[type="search"]');
+    const searchButtons = document.querySelectorAll('.search button');
     const vagas = document.querySelectorAll('.vaga');
 
-    function realizarBusca() {
-        const termo = searchInput.value.toLowerCase();
+    function realizarBusca(termo) {
+      const termoLimpo = termo.trim().toLowerCase();
+      let algumaEncontrada = false;
 
-        vagas.forEach(card => {
-            const titulo = card.querySelector('h2').textContent.toLowerCase();
-            if (titulo.includes(termo)) {
-                card.style.display = 'block';
-            } else {
-                card.style.display = 'none';
-            }
-        });
-    }
-    searchBtn.addEventListener('click', function () {
-        realizarBusca();
-    });
-    // Pressionar Enter
-    searchInput.addEventListener('keydown', function(event) {
-        if (event.key === 'Enter') {
-            event.preventDefault(); 
-            realizarBusca();
+      vagas.forEach(vaga => {
+        const textoVaga = vaga.innerText.toLowerCase();
+
+        if (textoVaga.includes(termoLimpo)) {
+          vaga.style.display = 'block';
+          algumaEncontrada = true;
+        } else {
+          vaga.style.display = 'none';
         }
+      });
+
+      // Se nenhuma vaga for encontrada
+      if (!algumaEncontrada) {
+        console.log('Nenhuma vaga encontrada com o termo:', termo);
+      }
+    }
+
+    // Ação ao clicar nos botões
+    searchButtons.forEach((btn, i) => {
+      btn.addEventListener('click', function (event) {
+        event.preventDefault();
+        const termo = searchInputs[i].value;
+        realizarBusca(termo);
+      });
     });
-});
+
+    // Ação ao pressionar Enter nos inputs
+    searchInputs.forEach(input => {
+      input.addEventListener('keydown', function (event) {
+        if (event.key === 'Enter') {
+          event.preventDefault();
+          realizarBusca(input.value);
+        }
+      });
+    });
+  });
 // Vaga botão 
 document.addEventListener('DOMContentLoaded', function () {
     const telaUsuario = document.querySelector('.tela-usuario');
