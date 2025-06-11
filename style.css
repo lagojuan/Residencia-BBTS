@@ -245,12 +245,20 @@ cursor: pointer;
     transform: scale(1.02);
 }
 /*DESCRIÇÃO*/
+.box-vaga{
+    display: flex;
+}
 .box-descricao {
+    display: none; /* Esconde a descrição por padrão */
     background-color: white;
     margin: 20px;
     border-radius: 30px;
     cursor: pointer; /* Muda o cursor para uma mãozinha ao passar o mouse */
 }
+.box-vaga.ativo .box-descricao {
+    display: block; /* Exibe a descrição quando a vaga está ativa */
+}
+
 .box-descricao-text{
     padding: 1rem;
     text-align: left;
